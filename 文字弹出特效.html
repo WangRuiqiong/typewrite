@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+			<div style="width:14%;min-height:200px;margin:50px auto;">
+				<div id="language_one" style="color:#f93;font-size:34px"></div>
+				<div id="language_two" style="display:none;">Hello world</div>
+			</div>
+			<script>
+				var word = document.getElementById("language_two").innerHTML;
+				var index=0;
+				function type(){
+				    //获取当前句子的显示文字数
+                    var upperLimit = word.split("").length;
+                    //如果当前下标数小于显示文字数
+                    if(index <= upperLimit){
+                        //就对文字进行切割，将切割的文字放入显示区
+                        document.getElementById("language_one").innerText = word.slice(0,index++);
+					}
+				}
+
+				setInterval(type,150);
+			</script>
+	</body>
+</html>
